@@ -1,16 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:relaq_ai/core/utils/constants.dart';
 import 'package:relaq_ai/core/utils/styles.dart';
+
+import 'custom_button.dart';
+import 'custom_login_button.dart';
 
 class SplashViewBody extends StatelessWidget {
   const SplashViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image(
-          image: AssetImage('assets/images/Releq_ai.png'),
+    var height=MediaQuery.sizeOf(context).height;
+    return  Padding(
+      padding: const EdgeInsets.symmetric(vertical:50),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Image(
+              image: AssetImage('assets/images/Releq_ai.png'),
+            ),
+            const SizedBox(
+              height:5),
+            const Text('Be with ai tools',
+            style:Styles.textStyle18,
+            ),
+               SizedBox( 
+                height:height*0.16),
+              const CustomLoginButton(),
+              const CustomButton(
+              text: 'SignUp',
+              backGroundColor: whiteColor,
+              textColor: primaryColor,
+              ),
+            
+          ],
         ),
-        Text('Be with ai tools'
+      ),
+    );
+  }
+}
