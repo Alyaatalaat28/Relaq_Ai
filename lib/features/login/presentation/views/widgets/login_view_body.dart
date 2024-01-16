@@ -14,21 +14,21 @@ final TextEditingController passwordController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.all(25.0),
+      padding: const EdgeInsets.all(20.0),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text('Welcome\nBack!',
-            style:Styles.textStyle45
+            style:Styles.textStyle40
             ),
-            const SizedBox(height:25),
+            const SizedBox(height:20),
             CustomTextFormField(
               controller: emailController, 
               keyboardType: TextInputType.emailAddress, 
               hintText: 'email',
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(height: 12,),
                CustomTextFormField(
               controller: passwordController, 
               keyboardType: TextInputType.visiblePassword, 

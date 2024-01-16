@@ -15,7 +15,7 @@ class GoogleOptionSignUp extends StatelessWidget {
             style: Styles.textStyle15,),
           ],
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: 7,),
         Image(
           image: AssetImage('assets/images/Google.png'),
           )
