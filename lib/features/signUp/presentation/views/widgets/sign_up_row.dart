@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:relaq_ai/core/utils/constants.dart';
 import 'package:relaq_ai/core/utils/styles.dart';
 
-class SignInRow extends StatelessWidget {
-  const SignInRow({super.key});
+class SignUpRow extends StatelessWidget {
+  const SignUpRow({super.key});
 
   @override
   Widget build(BuildContext context) {
     return  Row(
       children: [
-        const Text('Sign In',
+        const Text('Sign Up',
          style:Styles.textStyle32,
        ),
          const Spacer(),
