@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:relaq_ai/core/utils/bloc_observer.dart';
 import 'package:relaq_ai/core/utils/constants.dart';
 import 'package:relaq_ai/core/utils/routes.dart';
 
 void main() {
+   Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
