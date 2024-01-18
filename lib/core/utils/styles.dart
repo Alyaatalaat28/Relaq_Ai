@@ -21,6 +21,15 @@ abstract class Styles {
     fontSize: 15.0,
     color:kTextColor,
   );
-
+    static const textStyle20 = TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w600,
+    color:whiteColor,
+  );
+  static const textStyleG15 = TextStyle(
+    fontSize: 15.0,
+    fontWeight: FontWeight.w300,
+    color:Color(0xff1CDC18),
+  );
   
 }

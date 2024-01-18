@@ -6,3 +6,5 @@ const whiteColor=Color(0xffFFFFFF);
 const formFieldColor=Color(0xff262626);
 const formFieldTextColor=Color(0xff424242);
 const kTextColor=Color(0xff5F5F5F);
+const kMesFieldColor=Color(0xff272727);
+const kMesTextColor=Color(0xffA1A1A1);
