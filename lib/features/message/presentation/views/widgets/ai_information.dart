@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'ai_status.dart';
-import 'avatar.dart';
+import '../../../../../core/widgets/avatar.dart';
 
 class AiInformation extends StatelessWidget {
   const AiInformation({super.key});

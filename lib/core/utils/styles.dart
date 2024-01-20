@@ -31,5 +31,10 @@ abstract class Styles {
     fontWeight: FontWeight.w300,
     color:Color(0xff1CDC18),
   );
+   static const textStyle14 = TextStyle(
+    fontSize: 14.0,
+    fontWeight: FontWeight.w300,
+    color:formFieldColor,
+  );
   
 }
