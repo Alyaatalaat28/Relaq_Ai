@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:relaq_ai/core/utils/routes.dart';
 import 'package:relaq_ai/core/utils/styles.dart';
 import 'package:relaq_ai/core/widgets/custom_button.dart';
 
@@ -7,13 +9,17 @@ class SignInRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Row(
+    return  Row(
       children: [
-        Text('Sign In',
+        const Text('Sign In',
          style:Styles.textStyle30,
        ),
-         Spacer(),
-         CustomIconButton(),
+         const Spacer(),
+         CustomIconButton(
+           onPressed: (){
+                     GoRouter.of(context).push(AppRouter.kHomeView);
+                  },
+         ),
          
       ],
     );

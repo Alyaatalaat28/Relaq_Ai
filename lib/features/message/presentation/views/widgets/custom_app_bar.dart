@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relaq_ai/core/utils/constants.dart';
 import 'ai_information.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -7,8 +8,15 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: whiteColor,
+          ), 
+          onPressed: () {  },
+        ),
          const AiInformation(),
          Container(),
       ],

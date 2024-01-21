@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:relaq_ai/core/utils/constants.dart';
+import 'package:relaq_ai/core/utils/routes.dart';
 import 'package:relaq_ai/core/utils/styles.dart';
 
 import 'custom_button.dart';
@@ -28,10 +30,13 @@ class SplashViewBody extends StatelessWidget {
                SizedBox( 
                 height:height*0.16),
               const CustomLoginButton(),
-              const CustomButton(
+              CustomButton(
               text: 'SignUp',
               backGroundColor: whiteColor,
               textColor: primaryColor,
+               onPressed: (){
+                     GoRouter.of(context).push(AppRouter.kSignUpView);
+                  },
               ),
             
           ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:relaq_ai/core/utils/constants.dart';
+import 'package:relaq_ai/core/utils/routes.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
@@ -10,7 +12,9 @@ class ForgotPassword extends StatelessWidget {
       children:[
       const Spacer(),
       TextButton(
-        onPressed: () {  },
+        onPressed: () { 
+           GoRouter.of(context).push(AppRouter.kForgotPassword);
+         },
          child: const Text('Forgot Password?',
          style: TextStyle(
             color:primaryColor,

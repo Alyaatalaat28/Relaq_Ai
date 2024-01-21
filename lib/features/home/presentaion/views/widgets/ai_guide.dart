@@ -25,7 +25,7 @@ class AiGuide extends StatelessWidget {
           Text('Welcome to the Relaq Ai App! In this interactive learning experience, youll delve into the world of language models and explore the capabilities of Relaq Ai, a state-of-the-art AI-powered conversational agent.',
           maxLines: 4,
           style:Styles.textStyle18.copyWith(
-            fontSize: 12,
+            fontSize: 13,
           ),),        
         ],
       ),
