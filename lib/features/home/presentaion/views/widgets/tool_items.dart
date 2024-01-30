@@ -9,9 +9,7 @@ class ToolItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      children: [
-         Row(
+        return Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 AiToolItem(
@@ -29,30 +27,7 @@ class ToolItems extends StatelessWidget {
                    }
                   ),
               ],
-            ),
-            const SizedBox(
-              height:20.0,
-            ),
-           Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                AiToolItem(
-                  assetName:('assets/images/Rectangle477.png'), 
-                  text: 'Image Labeling',
-                   onTap:(){
-                    GoRouter.of(context).push(AppRouter.kImageLabelingView);
-                   }
-                  ),
-                AiToolItem(
-                  assetName:('assets/images/Rectangle480.png'), 
-                  text: 'Text Recognition',
-                   onTap:(){
-                    GoRouter.of(context).push(AppRouter.kTextRecognitionView);
-                   }
-                  ),
-              ],
-            ),
-      ],
+      
     );
   }
 }

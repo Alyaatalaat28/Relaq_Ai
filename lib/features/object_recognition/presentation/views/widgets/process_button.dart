@@ -3,8 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:relaq_ai/core/utils/constants.dart';
 
 class ProcessButton extends StatelessWidget {
-  const ProcessButton({super.key,required this.text});
+  const ProcessButton({super.key,required this.text,this.onPressed});
   final String text;
+  final void Function()?onPressed;
   @override
   Widget build(BuildContext context) {
     var width=MediaQuery.sizeOf(context).width;
@@ -17,7 +18,7 @@ class ProcessButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextButton(
-        onPressed: (){}, 
+        onPressed: onPressed, 
         child: Text(text,
         textAlign: TextAlign.center,
         style:GoogleFonts.oswald(
