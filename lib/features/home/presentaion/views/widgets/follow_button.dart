@@ -10,15 +10,15 @@ class FollowButton extends StatelessWidget {
     var width=MediaQuery.sizeOf(context).width;
     var height=MediaQuery.sizeOf(context).height;
     return Container(
-      width:width*0.26 ,
-      height:height*0.06,
+      width:width*0.27 ,
+      height:height*0.055,
       decoration: BoxDecoration(
         color: primaryColor,
         borderRadius: BorderRadius.circular(30),
       ),
       child: const Center(
-        child: Text('Follow',
-        style: Styles.textStyle18,),
+        child: Text('Following',
+        style: Styles.textStyle15W,),
       ),
     );
   }

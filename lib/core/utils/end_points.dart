@@ -1,2 +1,2 @@
- String apiKey = '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';
- String endpoint = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+ String apiKey = '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';
+ String baseUrl = 'https://api.openai.com/v1/chat/completions';

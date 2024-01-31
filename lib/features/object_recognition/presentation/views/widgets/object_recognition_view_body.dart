@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:relaq_ai/core/widgets/image_upload.dart';
+import 'package:relaq_ai/core/utils/constants.dart';
+import 'package:relaq_ai/features/object_recognition/presentation/views/widgets/image_upload.dart';
 import 'package:relaq_ai/features/message/presentation/manager/cubit/app_cubit.dart';
 import 'package:relaq_ai/features/object_recognition/presentation/views/widgets/process_button.dart';
 
@@ -22,10 +23,21 @@ class ObjectRecognitionViewBody extends StatelessWidget {
             ),
             ProcessButton(
               onPressed: (){
-                    cubit.pickImageAndProcess(context);
+                    cubit.processImage();
               },
               text:'Recognize Object'
             ),
+            const SizedBox(
+              height: 10,
+            ),
+            if(cubit.category!=null)
+            Container(
+               decoration: BoxDecoration(
+                color: whiteColor,
+                borderRadius: BorderRadius.circular(10),
+               ),  
+               child: Center(child: Text('Detected object: $cubit.category')),           
+            )
           ],
         ),
       );

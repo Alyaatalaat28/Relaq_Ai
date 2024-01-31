@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'custom_app_bar.dart';
-import 'message_body.dart';
+import 'meesage_content.dart';
+import 'message_sender.dart';
 
 class MessageViewBody extends StatelessWidget {
   const MessageViewBody({super.key});
@@ -12,7 +13,8 @@ class MessageViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomAppBar(),
-          MessageBody(),
+          MessageContent(),
+          MessageSender(),
         ],
       ),
     );

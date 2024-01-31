@@ -34,19 +34,18 @@ class AppCubit extends Cubit<AppState> {
         emit(SendMessageErrorState());
       });
   }
-
-    Future<void> processImage(XFile imageFile) async {
+  //object detection
+     String? category;
+    Future<void> processImage() async {
     try {
-      final InputImage inputImage = InputImage.fromFilePath(imageFile.path);
+      final InputImage inputImage = InputImage.fromFilePath(imageFile!.path);
       final List<DetectedObject> detectedObjects = await objectDetector.processImage(inputImage);
 
-      for (DetectedObject detectedObject in detectedObjects) {
-        Rect boundingBox = detectedObject.boundingBox;
-        String category = detectedObject.labels.first.text;
-        double confidence = detectedObject.labels.first.confidence;
+       for (DetectedObject detectedObject in detectedObjects) {
+         category = detectedObject.labels.first.text;
 
         if (kDebugMode) {
-          print('Detected object: $category, Confidence: $confidence, Bounding Box: $boundingBox');
+          print('Detected object: $category');
         }
       }
       emit(ProcessImageSuccessState());
@@ -57,20 +56,19 @@ class AppCubit extends Cubit<AppState> {
       emit(ProcessImageErrorState());
     }
   }
-
-   Future<void> pickImageAndProcess(BuildContext context) async {
+   XFile? imageFile;
+   Future<void> pickImage(BuildContext context) async {
     final ImagePicker picker = ImagePicker();
     try {
-      XFile? imageFile = await picker.pickImage(source: ImageSource.gallery);
+       imageFile = await picker.pickImage(source: ImageSource.gallery);
       if (imageFile != null) {
-        await processImage(imageFile);
-        emit(PickAndProcessImageSuccessState());
+        emit(PickImageSuccessState());
       }
     } catch (e) {
       if (kDebugMode) {
         print('Error picking image: $e');
       }
-      emit(PickAndProcessImageErrorState());
+      emit(PickImageErrorState());
     }
   }
 }

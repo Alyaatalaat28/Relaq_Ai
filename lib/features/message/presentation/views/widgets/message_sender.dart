@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'message_field.dart';
 
-class MessageBody extends StatelessWidget {
-  const MessageBody({super.key});
+class MessageSender extends StatelessWidget {
+  const MessageSender({super.key});
 
   @override
   Widget build(BuildContext context) {

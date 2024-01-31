@@ -6,7 +6,7 @@ static Dio dio=Dio();
 
  static Future<Response> sendMessage( {required Map<String,dynamic> data}) async {
     return await dio.post(
-      endpoint,
+      baseUrl,
       data:data,
          options: Options(
           headers: {

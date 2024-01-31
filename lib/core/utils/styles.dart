@@ -7,6 +7,10 @@ abstract class Styles {
     fontSize: 18.0,
     color:whiteColor,
   );
+    static const textStyle15W = TextStyle(
+    fontSize: 15.0,
+    color:whiteColor,
+  );
    static const textStyle40 = TextStyle(
     fontSize: 40.0,
     fontWeight: FontWeight.bold,

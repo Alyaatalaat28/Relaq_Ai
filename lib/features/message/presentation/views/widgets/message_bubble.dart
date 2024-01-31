@@ -1,24 +1,29 @@
+import 'package:flutter/material.dart';
+import 'package:relaq_ai/core/utils/constants.dart';
+
 class MessageBubble extends StatelessWidget {
   final String sender;
   final String message;
 
-  MessageBubble({required this.sender, required this.message});
+  const MessageBubble({super.key, required this.sender, required this.message});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Align(
         alignment: sender == 'user' ? Alignment.topRight : Alignment.topLeft,
         child: Container(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           decoration: BoxDecoration(
-            color: sender == 'user' ? Colors.blue : Colors.green,
+            color: sender == 'user' ? primaryColor:whiteColor ,
             borderRadius: BorderRadius.circular(12.0),
           ),
           child: Text(
             message,
-            style: TextStyle(color: Colors.white),
+            style:  TextStyle(
+              color: sender == 'user' ?whiteColor:scaffColor,
+              ),
           ),
         ),
       ),
