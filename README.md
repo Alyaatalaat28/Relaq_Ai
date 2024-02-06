@@ -1,6 +1,5 @@
 # relaq_ai
-
-
+Relaq AI is application that incorporates AI and object detection functionalities. By leveraging APIs and the Google ML Kit package, Relaq AI offers users the ability to have interactive conversations with an AI chatbot. Additionally, the integration of Firebase for authentication ensures a secure and seamless user experience.
 
 
 ![Screenshot_20240206-191052](https://github.com/Alyaatalaat28/Relaq_Ai/assets/78979377/b384fc4f-0515-4c7e-a6a3-b3d522a4c411)
