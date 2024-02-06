@@ -56,6 +56,7 @@ class AppCubit extends Cubit<AppState> {
       emit(ProcessImageErrorState());
     }
   }
+  //pick image
    XFile? imageFile;
    Future<void> pickImage(BuildContext context) async {
     final ImagePicker picker = ImagePicker();

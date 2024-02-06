@@ -3,17 +3,19 @@ import 'package:relaq_ai/core/utils/styles.dart';
 import 'package:relaq_ai/core/widgets/custom_button.dart';
 
 class SendCodeRow extends StatelessWidget {
-  const SendCodeRow({super.key});
-
+  const SendCodeRow({super.key,this.onPressed});
+  final void Function()?onPressed;
   @override
   Widget build(BuildContext context) {
-    return  const Row(
+    return  Row(
       children: [
-        Text('Send Code',
+        const Text('Send Code',
          style:Styles.textStyle30,
        ),
-         Spacer(),
-         CustomIconButton(),
+         const Spacer(),
+         CustomIconButton(
+          onPressed:onPressed,
+         ),
          
       ],
     );

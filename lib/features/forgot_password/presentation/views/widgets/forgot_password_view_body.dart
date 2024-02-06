@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:relaq_ai/core/utils/styles.dart';
 import 'package:relaq_ai/core/widgets/custom_text_form_field.dart';
+import 'package:relaq_ai/features/login/presentation/manager/cubit/login_cubit.dart';
 
 import 'send_code_row.dart';
 
@@ -10,7 +12,10 @@ class ForgotPasswordViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return  BlocBuilder<LoginCubit, LoginState>(
+      builder: (context, state) {
+        var cubit=LoginCubit.get(context); 
+      return Padding(
       padding: const EdgeInsets.all(20.0),
       child: SingleChildScrollView(
         child: Column(
@@ -25,10 +30,16 @@ class ForgotPasswordViewBody extends StatelessWidget {
               keyboardType: TextInputType.emailAddress, 
               hintText: 'Enter your email address',
               ),          
-            const SendCodeRow(),
+             SendCodeRow(
+              onPressed: (){
+                String email = emailController.text.trim();
+                cubit.resetPassword(email);
+              },
+            ),
           ],
         ),
       ),
+    );}
     );
   }
 }

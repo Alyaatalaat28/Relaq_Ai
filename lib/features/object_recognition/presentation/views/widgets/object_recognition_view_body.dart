@@ -31,12 +31,15 @@ class ObjectRecognitionViewBody extends StatelessWidget {
               height: 10,
             ),
             if(cubit.category!=null)
-            Container(
-               decoration: BoxDecoration(
-                color: whiteColor,
-                borderRadius: BorderRadius.circular(10),
-               ),  
-               child: Center(child: Text('Detected object: $cubit.category')),           
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                 decoration: BoxDecoration(
+                  color: whiteColor,
+                  borderRadius: BorderRadius.circular(10),
+                 ),  
+                 child: Center(child: Text('Detected object: ${cubit.category}')),           
+              ),
             )
           ],
         ),

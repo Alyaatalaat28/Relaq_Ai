@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:relaq_ai/core/utils/routes.dart';
 import 'package:relaq_ai/core/utils/styles.dart';
 import 'package:relaq_ai/core/widgets/custom_text_form_field.dart';
+import 'package:relaq_ai/features/login/presentation/manager/cubit/login_cubit.dart';
 import 'package:relaq_ai/features/login/presentation/views/widgets/sign_in_row.dart';
-
 import 'forgot_password.dart';
 import 'google_option.dart';
 
@@ -13,7 +16,15 @@ final TextEditingController passwordController=TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return BlocConsumer<LoginCubit,LoginState>(
+      listener: (context, state) {
+        if(state is LoginSuccessState||state is GoogleUserSignInSuccessState) {
+          GoRouter.of(context).push(AppRouter.kHomeView);
+        }
+      },
+      builder: (context, state) {
+        var cubit=LoginCubit.get(context);
+        return  Padding(
       padding: const EdgeInsets.all(20.0),
       child: SingleChildScrollView(
         child: Column(
@@ -37,12 +48,21 @@ final TextEditingController passwordController=TextEditingController();
               ),
              const SizedBox(height:10    ),
              const ForgotPassword(),
-             const SignInRow(),
+              SignInRow(
+              onPressed: (){
+                cubit.userLogin(
+                  email: emailController.text, 
+                  password: passwordController.text
+                  );
+              },
+             ),
              const GoogleOption(),
         
           ],
         ),
       ),
+    );
+    }
     );
   }
 }
